@@ -9,13 +9,17 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public class Controller {
 
-    	@RequestMapping(value={"/", "/index"}, method = RequestMethod.GET)
+    	@RequestMapping(value={"/", "/home"}, method = RequestMethod.GET)
 	public ModelAndView login(){
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("index");
+		modelAndView.setViewName("home");
 		return modelAndView;
 	}
 
-
-
+	@RequestMapping(value={"login"}, method = RequestMethod.GET)
+	public ModelAndView register(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("login");
+		return modelAndView;
+	}
 }
