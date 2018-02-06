@@ -97,6 +97,13 @@ cursor: pointer;
 transition: background .5s;
 }
 
+.link {
+color: #FFFFF;
+text-decoration: none;
+background-color: none;
+decoration: none;
+}
+
 /* Main */
 .main .container {
 margin: 80px auto;

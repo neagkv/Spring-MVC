@@ -1,4 +1,4 @@
-package com.advancedMVC.advancedMVC;
+package com.advancedMVC;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
