@@ -1,14 +1,11 @@
 package com.advancedMVC.application.service;
-
-import com.advancedMVC.application.model.Role;
 import com.advancedMVC.application.model.Users;
-import com.advancedMVC.application.repository.RoleRepo;
-import com.advancedMVC.application.repository.UserRepo;
+import com.advancedMVC.application.repository.RoleRepository;
+import com.advancedMVC.application.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.util.Arrays;
-import java.util.HashSet;
+
 
 /**
  * @author Kevin Neag
@@ -18,10 +15,10 @@ import java.util.HashSet;
 public class UserService implements UserServiceInterface{
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepo;
 
     @Autowired
-    private RoleRepo roleRepo;
+    private RoleRepository roleRepo;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -31,16 +28,9 @@ public class UserService implements UserServiceInterface{
         return userRepo.findByEmail(email);
     }
 
-
-
     @Override
-    public void saveUser(Users users) {
-        users.setPassword(bCryptPasswordEncoder.encode(users.getPassword()));
-        users.setActive(1);
-        Role userRole = roleRepo.findByRole("ADMIN");
-        users.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
-        userRepo.save(users);
-    }
+    public void saveUser(Users user) {
 
+    }
 
 }
